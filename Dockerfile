@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM python:3.6-alpine
 
 RUN /usr/local/bin/python -m pip install --upgrade pip
 RUN mkdir /app
