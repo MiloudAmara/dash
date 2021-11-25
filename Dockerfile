@@ -4,7 +4,8 @@ RUN /usr/local/bin/python -m pip install --upgrade pip
 RUN mkdir /app
 WORKDIR /app
 ADD requirements.txt /app/
-RUN python -m pip install --only-binary=:all: -r requirements.txt
+#RUN python -m pip install --only-binary=:all: -r requirements.txt
+RUN pip install -r requirements.txt
 ADD . /app/
 
 ENTRYPOINT [ "python" ]
