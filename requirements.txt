@@ -1,5 +1,4 @@
-wheel
-Brotli==1.0.9
+Brotli==1.0.10
 click==8.0.3
 colorama==0.4.4
 dash==2.0.0
