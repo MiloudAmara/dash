@@ -5,7 +5,8 @@ RUN mkdir /app
 WORKDIR /app
 ADD requirements.txt /app/
 #RUN python -m pip install --only-binary=:all: -r requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install wheel
+RUN pip install --no-cache-dir -r requirements.txt
 ADD . /app/
 
 ENTRYPOINT [ "python" ]
