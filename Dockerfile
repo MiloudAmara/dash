@@ -1,4 +1,4 @@
-FROM python:3.6.1-alpine
+FROM python:3.6.0-alpine
 RUN apk add --no-cache gcc
 RUN /usr/local/bin/python -m pip install --upgrade pip
 RUN mkdir /app
