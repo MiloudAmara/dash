@@ -7,8 +7,8 @@ ADD requirements.txt /app/
 #RUN python -m pip install --only-binary=:all: -r requirements.txt
 
 RUN pip install wheel
-ADD Brotli-1.0.9-cp36-cp36m-manylinux1_x86_64.whl /app/
-RUN pip install Brotli-1.0.9-cp36-cp36m-manylinux1_x86_64.whl
+ADD Brotli-1.0.9-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl /app/
+RUN pip install Brotli-1.0.9-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
 
 RUN pip install --no-cache-dir -r requirements.txt
 
