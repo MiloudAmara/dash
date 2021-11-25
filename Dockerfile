@@ -1,5 +1,5 @@
 FROM python:3.6.1-alpine
-
+RUN apk add build-base
 RUN /usr/local/bin/python -m pip install --upgrade pip
 RUN mkdir /app
 WORKDIR /app
