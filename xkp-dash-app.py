@@ -1,13 +1,13 @@
 import dash
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc  # pip install dash-bootstrap-components
-import dash_html_components as html
+from dash import html #import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.express as px
 
 import pandas as pd
 
-df = pd.read_csv('assets/data/gapminderDataFiveYear.csv')
+df = pd.read_csv('gapminder-FiveYearData.csv')
 
 dash_app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
 app = dash_app.server
@@ -42,4 +42,4 @@ def update_figure(selected_year):
 
 
 if __name__ == '__main__':
-    dash_app.run_server(debug=True)
+    dash_app.run_server(debug=True) #, host='0.0.0.0', port='8080')
