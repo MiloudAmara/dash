@@ -1,18 +1,7 @@
-FROM python:3.9.0-alpine
-RUN apk add --no-cache gcc
-RUN /usr/local/bin/python -m pip install --upgrade pip
+FROM python:3
 RUN mkdir /app
 WORKDIR /app
-ADD requirements.txt /app/
-#RUN python -m pip install --only-binary=:all: -r requirements.txt
-
-RUN pip install wheel brotli==1.0.9
-#ADD Brotli-1.0.9-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl /app/
-#RUN pip install Brotli-1.0.9-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
-
+COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
-
-ADD . /app/
-
-ENTRYPOINT [ "python" ]
-CMD ["xkp-dash-app.py"]
+COPY . /app/
+CMD [ "python", "xkp-dash-app.py" ]
